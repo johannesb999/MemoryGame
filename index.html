@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Memory</title>
+	<link rel="stylesheet" href="stylesheet.css">
+	<script src="Memory.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+	<link rel="icon" href="HelleTheme.svg" type="image/x-icon">
+
+</head>
+
+<body>
+	<header>
+
+		<h1 class="title">SIGHTSEEING-MEMORY</h1>
+		<div class="scoreTimeContainer">
+			<div class="scoreContainer">Score: <span id="scoreboard">0</span></div>
+			<div class="timerContainer">Time: <span id="timer">0</span></div>
+			<button id="playButton">
+				<img src="mute.png" alt="Play" id="playIcon">
+				<img src="volume.png" alt="Pause" id="pauseIcon">
+			</button>
+		</div>
+		<div id="pairsContainer">
+			<div>Select number of pairs</div>
+			<div><select id="pairCount">
+					<option value="0">0</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="25">25</option>
+					<option value="30">30</option>
+					<option value="35">35</option>
+				</select>
+			</div>
+		</div>
+	</header>
+
+
+	<div class="tilesContainer" id="tilesContainer">
+		<div class="tiles" id="tiles"></div>
+	</div>
+
+	<div id="winScreen" class="win-screen-hidden">
+		<h1>Congratulations!</h1>
+		<p id="winMessage"></p>
+		<!-- <button id="playAgainButton">Nochmal spielen</button> -->
+	</div>
+
+
+	<footer>
+
+		<div id="row1Container">
+			<div id="foundCardsContainer"></div>
+			<button id="resetButton">SET NEW GAME</button>
+		</div>
+		<div class="infoContainer">
+			<div class="infoItem">Johannes Biess</div>
+			<div class="infoItem">Programmiersprachen Prüfungsleistung</div>
+			<div class="infoItem">SoSe 2023</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>
