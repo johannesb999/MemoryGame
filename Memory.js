@@ -15,6 +15,7 @@ let numberOfImages = dropdownNumber;
 let pushimages = pickSettetNumberOfPictures(dropdownNumber);
 let gameStarted = false;
 
+
 const allImages = [
   "Beach.jpg",
   "BlackDessert.jpg",
@@ -62,11 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let droppush = document.getElementById("value");
   dropdown.addEventListener("change", function (event) {
     droppush = event.target.value;
-    // console.log(droppush); // Logs selected value to console
     dropdownNumber = droppush;
     numberOfImages = dropdownNumber;
     pushimages = pickSettetNumberOfPictures(dropdownNumber);
-    setGame();
+    // setGame();
   });
 });
 
