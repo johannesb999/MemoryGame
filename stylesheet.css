@@ -212,6 +212,7 @@ footer {
   width: 100px;
   height: 100px;
   margin-right: 30px;
+  background-image: url("Coverhighres.svg") !important;
   /* background-image: linear-gradient(360deg, #e1cba5 10%, #e1cba5 100%); */
   /* background-image: url("HelleTheme.svg") !important; */
   background-size: cover;
@@ -278,7 +279,7 @@ footer {
   align-items: center;
   width: 100%;
   padding: 0 2rem;
-  color: #e2e2e267;
+  color: #57575767;
   margin-top: 20px;
 }
 
@@ -290,7 +291,6 @@ footer {
   margin-right: 50px;
 }
 
-/* Große Bildschirme, Laptops */
 @media (min-width: 992px) {
   .tile {
     width: 100px;
@@ -305,7 +305,6 @@ footer {
   }
 }
 
-/* Tablets, kleine Laptops */
 @media (min-width: 768px) and (max-width: 991px) {
   .tile {
     width: 80px;
@@ -323,29 +322,35 @@ footer {
     padding: 0 2rem;
     font-size: large;
   }
+  .infoItem {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+  }
 }
 
-/* Mobile Geräte in Querformat und sehr kleine Laptops */
 @media (min-width: 576px) and (max-width: 767px) {
   .tile {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   #foundCardsContainer,
   #resetButton {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     font-size: 10px;
   }
   .infoContainer {
-    justify-content: space-between;
-    padding: 0 2rem;
-    font-size: medium;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.1rem;
+  }
+  .infoItem {
+    font-size: 15px;
+    margin: 5px;
   }
 }
 
-/* Kleine Mobile Geräte */
 @media (max-width: 575px) {
   .tile {
     width: 40px;
@@ -366,6 +371,7 @@ footer {
 
   .infoItem {
     margin: 5px;
+    font-size: 10px;
   }
 }
 

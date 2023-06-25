@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownNumber = droppush;
     numberOfImages = dropdownNumber;
     pushimages = pickSettetNumberOfPictures(dropdownNumber);
-    setGame();
+    // setGame();
   });
 });
 
