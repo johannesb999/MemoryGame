@@ -294,38 +294,59 @@ footer {
   margin-right: 50px;
 }
 
-@media (max-width: 800px) {
-  .infoContainer {
-    flex-direction: column;
-    width: 90%;
-  }
-  .tiles {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1000px;
-  }
+/* Große Bildschirme, Laptops */
+@media (min-width: 992px) {
   .tile {
+    width: 100px;
+    height: 100px;
+  }
+
+  #foundCardsContainer, #resetButton {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Tablets, kleine Laptops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .tile {
+    width: 80px;
+    height: 80px;
+  }
+
+  #foundCardsContainer, #resetButton {
     width: 80px;
     height: 80px;
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile Geräte in Querformat und sehr kleine Laptops */
+@media (min-width: 576px) and (max-width: 767px) {
   .tile {
-    margin: 2px;
+    width: 50px;
+    height: 50px;
+  }
+
+  #foundCardsContainer, #resetButton {
     width: 50px;
     height: 50px;
   }
 }
 
-@media (max-width: 400px) {
+/* Kleine Mobile Geräte */
+@media (max-width: 575px) {
   .tile {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+  }
+
+  #foundCardsContainer, #resetButton {
+    width: 40px;
+    height: 40px;
   }
 }
+
+
 
 #winScreen {
   position: fixed;
