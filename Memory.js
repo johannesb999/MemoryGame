@@ -1,8 +1,8 @@
-// Initializing the game board container.
+// initializing the game board container.
 const tilesContainer = document.getElementById("tilesContainer");
 const tiles = document.getElementById("tiles");
 
-// Initializing the game state and variables
+// initializing the game state and variables
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
@@ -53,10 +53,10 @@ const allImages = [
   "Freiheitsstatue.jpg",
   "Kairo.jpg",
 ];
-//Copy of AllImages to pick from that
+//copy of AllImages to pick from that
 let tempImages = [...allImages];
 
-//EVENTLISTENER///////
+//EVENTLISTENER
 
 document.addEventListener("DOMContentLoaded", () => {
   let droppush = document.getElementById("value");
@@ -70,10 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Adding an event listener to the reset button.
-// document.getElementById('resetButton').addEventListener('click', setGame)
-
-// Adding an event listener to the reset button.
+// adding an event listener to the reset button.
 document.getElementById("resetButton").addEventListener("click", function () {
   hideWinScreen();
   setGame();
@@ -92,7 +89,7 @@ const audio = new Audio("backmusic.mp3");
 audio.volume = 0.3;
 let isPlaying = false;
 
-//mute or play Button for backgroundmusic
+//mute or play button for backgroundmusic
 playButton.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
@@ -110,12 +107,10 @@ playButton.addEventListener("click", () => {
 //looped backgroundmusic
 audio.addEventListener("ended", () => {
   isPlaying = false;
-  // playIcon.style.display = 'block';
-  // pauseIcon.style.display = 'none';
   audio.play();
 });
 
-//FUNCTIONS//////////////////////
+//FUNCTIONS
 
 function pickSettetNumberOfPictures(numberOfImages) {
   let selectedImages = [];
@@ -123,7 +118,7 @@ function pickSettetNumberOfPictures(numberOfImages) {
     const randomIndex = Math.floor(Math.random() * tempImages.length);
     const randomImage = tempImages[randomIndex]; //takes randomImage from copy of AllImages
     selectedImages.push(randomImage);
-    tempImages.splice(randomIndex, 1); // Dies verhindert die Wiederholung des gleichen Bildes.
+    tempImages.splice(randomIndex, 1); // prevents selection of same picture twice
   }
   return selectedImages;
 }
@@ -144,42 +139,42 @@ function setGame() {
     tiles.removeChild(tiles.firstChild);
   }
 
-  // Defining a list of image names for the memory game.
+  // defining a list of image names for the memory game.
   function getData() {
     return pushimages; //string
   }
   const images = getData();
-  const imagesPicklist = [...images, ...images]; // Duplicating the list of images to create pairs.
+  const imagesPicklist = [...images, ...images]; // duplicating the list of images to create pairs.
 
-  const tileCount = imagesPicklist.length; // Total number of tiles, based on the number of images.
+  const tileCount = imagesPicklist.length; // total number of tiles, based on the number of images.
 
-  // Creating the game board by creating cards/tiles
+  // creating the game board by creating cards/tiles
   for (let i = 0; i < tileCount; i++) {
-    const randomIndex = Math.floor(Math.random() * imagesPicklist.length); // Selecting a name randomly from the array.
-    const image = imagesPicklist[randomIndex]; // Assigning the picked image to the `image` variable.
+    const randomIndex = Math.floor(Math.random() * imagesPicklist.length); // selecting a name randomly from the array.
+    const image = imagesPicklist[randomIndex]; // assigning the picked image to the `image` variable.
     const tile = buildTile(image);
 
-    imagesPicklist.splice(randomIndex, 1); // Removing the used image from the picklist.
-    tiles.appendChild(tile); // Adding the tile to the game board.
+    imagesPicklist.splice(randomIndex, 1); // removing the used image from the picklist.
+    tiles.appendChild(tile); // adding the tile to the game board.
   }
 
   function checkMatch(tile1, tile2) {
-    // Get the image attribute of each tile
+    // get the image attribute of each tile
     const image1 = tile1.getAttribute("data-image");
     const image2 = tile2.getAttribute("data-image");
 
-    // Check if the images of the two tiles match
+    // check if the images of the two tiles match
     if (image1 === image2) {
-      // Add the "matchedboarder" class to indicate a match
+      // add the "matchedboarder" class to indicate a match
       tile1.classList.add("matchedboarder");
       tile2.classList.add("matchedboarder");
 
-      // Play a sound effect for a successful match
+      // play a sound effect for a successful match
       var flipSound = new Audio("MatchSound.mp3");
       flipSound.volume = 0.5;
       flipSound.play();
 
-      // Set a timeout to remove the "matched" and "flipIn" classes, hide the tiles, update the game state
+      // set a timeout to remove the "matched" and "flipIn" classes, hide the tiles, update the game state
       // and add the matched image to the found container
       setTimeout(() => {
         tile1.classList.remove("matched");
@@ -193,9 +188,9 @@ function setGame() {
         revealedCount += 2;
         addCardToFoundContainer(image2);
 
-        // Check if all tiles have been matched and display a victory message
+        // check if all tiles have been matched and display a victory message
         if (revealedCount === tileCount) {
-          // Play a sound effect for winning the game
+          // play a sound effect for winning the game
           var victorySound = new Audio("VictorySound.mp3");
           victorySound.volume = 0.5;
           victorySound.play();
@@ -203,14 +198,14 @@ function setGame() {
           showWinScreen();
         }
 
-        // Update the scoreboard with the current number of matched pairs
+        // update the scoreboard with the current number of matched pairs
         document.getElementById("scoreboard").innerHTML = revealedCount / 2;
       }, 2500);
 
-      return true; // Return true to indicate a successful match
+      return true; // return true to indicate a successful match
     }
 
-    return false; // Return false if the images don't match
+    return false; // return false if the images don't match
   }
 
   function handleClick(element) {
@@ -223,9 +218,9 @@ function setGame() {
 
     element.classList.remove("covered");
     element.setAttribute("data-revealed", "true");
-    element.classList.add("flipIn"); // Füge die Flip-Animation hinzu
+    element.classList.add("flipIn"); //
 
-    // Audio zum Abspielen des Flip-Sounds erstellen
+    // audio zum Abspielen des Flip-Sounds erstellen
     var flipSound = new Audio("flipSound.mp3");
     flipSound.volume;
     flipSound.play();
@@ -247,18 +242,18 @@ function setGame() {
     setTimeout(() => {
       tile1.classList.add("covered");
       tile1.setAttribute("data-revealed", "false");
-      tile1.classList.remove("flipIn"); // Entferne die Flip-Animation
-      tile1.classList.add("flipOut"); // Füge die Flip-Animation hinzu
+      tile1.classList.remove("flipIn");
+      tile1.classList.add("flipOut");
       setTimeout(() => {
-        tile1.classList.remove("flipOut"); // Entferne die Flip-Animation
+        tile1.classList.remove("flipOut");
       }, 200);
 
       tile2.classList.add("covered");
       tile2.setAttribute("data-revealed", "false");
-      tile2.classList.remove("flipIn"); // Entferne die Flip-Animation
-      tile2.classList.add("flipOut"); // Füge die Flip-Animation hinzu
+      tile2.classList.remove("flipIn");
+      tile2.classList.add("flipOut");
       setTimeout(() => {
-        tile2.classList.remove("flipOut"); // Entferne die Flip-Animation
+        tile2.classList.remove("flipOut");
       }, 200);
 
       awaitingEndOfMove = false;
@@ -267,9 +262,9 @@ function setGame() {
   }
 
   function buildTile(image) {
-    // Create a new <div> element for the tile
+    // create a new div element for the tile
     const element = document.createElement("div");
-    // Add classes to the element
+    // add classes to the element
     element.classList.add("tile", "covered");
     element.setAttribute("data-image", image);
     element.setAttribute("data-revealed", "false");
@@ -279,32 +274,32 @@ function setGame() {
   }
 }
 
-// Function to start the reveal animation for all cards.
+// function to start the reveal animation for all cards
 function revealCards() {
   const tiles = document.querySelectorAll(".tile");
 
-  // Soundeffekt für das Austeilen der Karten
+  // soundeffekt für das Austeilen der Karten
   let audio = new Audio("FlipSound.mp3");
 
   tiles.forEach((tile, index) => {
     setTimeout(() => {
       tile.style.opacity = 1;
 
-      // Abspielen des Soundeffekts
+      //plaing audio
       audio
         .play()
         .then(() => {
-          // Audio geladen und abgespielt
+          // audio loaded and played
         })
         .catch((error) => {
-          // Fehler beim Laden oder Abspielen des Audios
+          // errordetection
           console.error(error);
         });
     }, index * 100);
   });
 }
 
-// Timer function to display the elapsed time.
+// timer function to display the elapsed time.
 function startTimer() {
   gameTimer = setInterval(() => {
     secondsElapsed++;
@@ -316,14 +311,14 @@ function startTimer() {
   }, 1000);
 }
 
-//Reset the timer to zero.
+//reset the timer to zero.
 function resetTimer() {
   clearInterval(gameTimer);
   secondsElapsed = 0;
   document.getElementById("timer").innerHTML = "00:00";
 }
 
-//Move cards to a separate deck after a match.
+//move cards to a separate deck after a match.
 function addCardToFoundContainer(image) {
   const foundCardsContainer = document.getElementById("foundCardsContainer");
 
@@ -332,25 +327,25 @@ function addCardToFoundContainer(image) {
   element.style.backgroundImage = `url(${image})`;
   element.style.opacity = 1;
 
-  // Verwende prepend, um das Element am Anfang des foundCardsContainer einzufügen
+  // use prepend, to implement the element on top of the container
   foundCardsContainer.prepend(element);
 }
 
-//Move cards back out when restarting the game.
+//move cards back out when restarting the game.
 function clearFoundCardsContainer() {
   const foundCardsContainer = document.getElementById("foundCardsContainer");
 
-  // Entferne alle Kinder von foundCardsContainer
+  // entferne alle Kinder von foundCardsContainer
   while (foundCardsContainer.firstChild) {
     foundCardsContainer.removeChild(foundCardsContainer.firstChild);
   }
 }
 
-// Access the win screen and the play again button
+// access the win screen and the play again button
 const winScreen = document.getElementById("winScreen");
 const playAgainButton = document.getElementById("playAgainButton");
 
-// Show win screen with the appropriate message
+// show win screen with the appropriate message
 function showWinScreen() {
   const minutes = Math.floor(secondsElapsed / 60);
   const seconds = secondsElapsed % 60;
@@ -362,7 +357,7 @@ function showWinScreen() {
   winScreen.classList.remove("win-screen-hidden");
 }
 
-// Hide win screen
+// hide win screen
 function hideWinScreen() {
   winScreen.classList.add("win-screen-hidden");
 }

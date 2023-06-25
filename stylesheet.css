@@ -57,6 +57,7 @@
 
 #pairCount {
   background-color: #e1cba5;
+  border-radius: 5px;
 }
 
 /* MEDIAQUERRYS Header*/
@@ -79,9 +80,10 @@
 /* BODY */
 
 body {
+  scroll-behavior: smooth;
   position: relative;
   background: #000000;
-  /* background-image: linear-gradient(135deg, #659999 10%, #f4791f 100%); */
+  /* background-image: linear-gradient(135deg, #8b9965 10%, #f4791f 100%); */
   /* background-image: url("Coverhighres.svg") !important; */
   display: flex;
   flex-direction: column;
@@ -185,7 +187,7 @@ body {
 footer {
   background-color: black;
   flex-direction: column;
-  padding: 5px;
+  padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -270,6 +272,7 @@ footer {
 }
 
 .infoContainer {
+  font-size: larger;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -315,6 +318,11 @@ footer {
     height: 80px;
     font-size: 15px;
   }
+  .infoContainer {
+    justify-content: space-between;
+    padding: 0 2rem;
+    font-size: large;
+  }
 }
 
 /* Mobile Geräte in Querformat und sehr kleine Laptops */
@@ -330,6 +338,11 @@ footer {
     height: 50px;
     font-size: 10px;
   }
+  .infoContainer {
+    justify-content: space-between;
+    padding: 0 2rem;
+    font-size: medium;
+  }
 }
 
 /* Kleine Mobile Geräte */
@@ -344,6 +357,15 @@ footer {
     width: 40px;
     height: 40px;
     font-size: 9px;
+  }
+  .infoContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .infoItem {
+    margin: 5px;
   }
 }
 
