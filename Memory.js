@@ -58,7 +58,7 @@ let tempImages = [...allImages];
 
 //EVENTLISTENER///////
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   let droppush = document.getElementById("value");
   dropdown.addEventListener("change", function (event) {
     droppush = event.target.value;
@@ -121,7 +121,7 @@ function pickSettetNumberOfPictures(numberOfImages) {
   let selectedImages = [];
   for (let i = 0; i < numberOfImages; i++) {
     const randomIndex = Math.floor(Math.random() * tempImages.length);
-    const randomImage = tempImages[randomIndex]; //nimmt randomImage aus Kopie AllImages
+    const randomImage = tempImages[randomIndex]; //takes randomImage from copy of AllImages
     selectedImages.push(randomImage);
     tempImages.splice(randomIndex, 1); // Dies verhindert die Wiederholung des gleichen Bildes.
   }
