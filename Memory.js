@@ -89,7 +89,7 @@ const playIcon = document.getElementById("playIcon");
 const pauseIcon = document.getElementById("pauseIcon");
 
 const audio = new Audio("backmusic.mp3");
-audio.volume = 1;
+audio.volume = 0.3;
 let isPlaying = false;
 
 //mute or play Button for backgroundmusic

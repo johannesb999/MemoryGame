@@ -227,9 +227,24 @@ footer {
   margin: 0;
   position: absolute;
   z-index: 0;
-  animation: slideIn 0.5s ease-out;
+  animation: slideIn 1s ease-out forwards;
   border: 0.5px solid;
 }
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 
 #foundCardsContainer .tile:first-child {
   z-index: 1;
