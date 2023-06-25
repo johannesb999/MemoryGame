@@ -83,20 +83,21 @@ body {
   position: relative;
   background: #000000;
   /* background-image: linear-gradient(135deg, #659999 10%, #f4791f 100%); */
-  /* background-image: url("Coverhighres.svg") !important; */
+  background-image: url("Coverhighres.svg") !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 3rem;
 }
 
-.tilesContainer {
+/* .tilesContainer {
   width: 90%;
   height: 90%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
+} */
 
 .tiles {
   display: flex;
@@ -305,6 +306,7 @@ footer {
     width: 100px;
     height: 100px;
   }
+  
 }
 
 /* Tablets, kleine Laptops */
