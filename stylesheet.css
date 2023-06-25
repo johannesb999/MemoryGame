@@ -91,7 +91,9 @@ body {
   align-items: center;
   padding-bottom: 3rem;
 }
-
+main {
+  flex: 1 0 auto; 
+}
 .tiles {
   display: flex;
   justify-content: center;
@@ -214,6 +216,7 @@ footer {
   margin-right: 30px;
   /* background-image: linear-gradient(360deg, #e1cba5 10%, #e1cba5 100%); */
   /* background-image: url("HelleTheme.svg") !important; */
+  background-image: url("Coverhighres.svg") !important;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
@@ -278,8 +281,8 @@ footer {
   align-items: center;
   width: 100%;
   padding: 0 2rem;
-  color: #e2e2e267;
-  margin-top: 20px;
+  color: #403e3e67;
+  margin-top: 10px;
 }
 
 .infoItem {
@@ -324,7 +327,7 @@ footer {
   }
   .infoContainer {
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0.2rem;
   }
 }
 
@@ -337,13 +340,14 @@ footer {
 
   #foundCardsContainer,
   #resetButton {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     font-size: 10px;
   }
   .infoContainer {
-    justify-content: space-between;
-    padding: 0 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.1rem;
   }
   .infoItem {
     font-size: 15px;
@@ -367,7 +371,7 @@ footer {
   .infoContainer {
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0.1rem;
   }
 
   .infoItem {
