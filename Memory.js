@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownNumber = droppush;
     numberOfImages = dropdownNumber;
     pushimages = pickSettetNumberOfPictures(dropdownNumber);
+
     // setGame();
   });
 });
@@ -124,6 +125,7 @@ function pickSettetNumberOfPictures(numberOfImages) {
 }
 
 //set game without site reload
+
 function setGame() {
   // set Gamestatus to NULL
   hideWinScreen();
@@ -171,6 +173,7 @@ function setGame() {
 
       // play a sound effect for a successful match
       var flipSound = new Audio("MatchSound.mp3");
+
       flipSound.volume = 0.5;
       flipSound.play();
 
